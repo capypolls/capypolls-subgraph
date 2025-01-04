@@ -1,0 +1,76 @@
+type CloneablePollUpdated @entity(immutable: true) {
+  id: Bytes!
+  oldAddress: Bytes! # address
+  newAddress: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type CloneableTokenUpdated @entity(immutable: true) {
+  id: Bytes!
+  oldAddress: Bytes! # address
+  newAddress: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type FeesWithdrawn @entity(immutable: true) {
+  id: Bytes!
+  to: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type OwnershipTransferred @entity(immutable: true) {
+  id: Bytes!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type PollCreated @entity(immutable: true) {
+  id: Bytes!
+  creator: Bytes! # address
+  pollAddress: Bytes! # address
+  yesToken: Bytes! # address
+  noToken: Bytes! # address
+  question: String! # string
+  avatar: String! # string
+  description: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ProtocolFeeUpdated @entity(immutable: true) {
+  id: Bytes!
+  oldFee: BigInt! # uint256
+  newFee: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type SUSDETokenUpdated @entity(immutable: true) {
+  id: Bytes!
+  oldAddress: Bytes! # address
+  newAddress: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type USDETokenUpdated @entity(immutable: true) {
+  id: Bytes!
+  oldAddress: Bytes! # address
+  newAddress: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
