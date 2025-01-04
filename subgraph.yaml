@@ -45,3 +45,40 @@ dataSources:
         - event: USDETokenUpdated(address,address)
           handler: handleUSDETokenUpdated
       file: ./src/capy-core.ts
+templates:
+  - kind: ethereum
+    name: CapyPoll
+    network: bsc
+    source:
+      abi: CapyPoll
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Initialized
+        - CapyPollOwnershipTransferred
+        - PollResolved
+        - RewardsDistributed
+        - StakeAdded
+        - StakeWithdrawn
+        - TokensDistributed
+      abis:
+        - name: CapyPoll
+          file: ./abis/CapyPoll.json
+      eventHandlers:
+        - event: Initialized(uint64)
+          handler: handleInitialized
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: PollResolved(bool)
+          handler: handlePollResolved
+        - event: RewardsDistributed(indexed address,uint256)
+          handler: handleRewardsDistributed
+        - event: StakeAdded(indexed address,uint256,bool,uint256)
+          handler: handleStakeAdded
+        - event: StakeWithdrawn(indexed address,uint256)
+          handler: handleStakeWithdrawn
+        - event: TokensDistributed(indexed uint256,uint256)
+          handler: handleTokensDistributed
+      file: ./src/capy-poll.ts

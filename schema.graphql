@@ -74,3 +74,79 @@ type USDETokenUpdated @entity(immutable: true) {
   blockTimestamp: BigInt!
   transactionHash: Bytes!
 }
+type Initialized @entity(immutable: true) {
+  id: Bytes!
+  creator: Bytes! # address
+  pollAddress: Bytes! # address
+  version: BigInt! # uint64
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type CapyPollOwnershipTransferred @entity(immutable: true) {
+  id: Bytes!
+  creator: Bytes! # address
+  pollAddress: Bytes! # address
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type PollResolved @entity(immutable: true) {
+  id: Bytes!
+  creator: Bytes! # address
+  pollAddress: Bytes! # address
+  winningPosition: Boolean! # bool
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type RewardsDistributed @entity(immutable: true) {
+  id: Bytes!
+  creator: Bytes! # address
+  pollAddress: Bytes! # address
+  user: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type StakeAdded @entity(immutable: true) {
+  id: Bytes!
+  creator: Bytes! # address
+  pollAddress: Bytes! # address
+  user: Bytes! # address
+  amount: BigInt! # uint256
+  position: Boolean! # bool
+  epoch: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type StakeWithdrawn @entity(immutable: true) {
+  id: Bytes!
+  creator: Bytes! # address
+  pollAddress: Bytes! # address
+  user: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type TokensDistributed @entity(immutable: true) {
+  id: Bytes!
+  creator: Bytes! # address
+  pollAddress: Bytes! # address
+  epoch: BigInt! # uint256
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
