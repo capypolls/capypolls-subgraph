@@ -6,11 +6,11 @@ schema:
 dataSources:
   - kind: ethereum
     name: CapyCore
-    network: bsc
+    network: opbnb-testnet
     source:
-      address: "0x6b165dE91F825584117c23f79F634849aCff4f68"
+      address: "0xb8B814Fd019C00888eb34721f87aa82E3f2E1F28"
       abi: CapyCore
-      startBlock: 15
+      startBlock: 49219782
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -48,7 +48,7 @@ dataSources:
 templates:
   - kind: ethereum
     name: CapyPoll
-    network: bsc
+    network: opbnb-testnet
     source:
       abi: CapyPoll
     mapping:
